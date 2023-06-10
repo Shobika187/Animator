@@ -1,7 +1,7 @@
 # Animator
 
 ## Aim:
-
+To develop a animator using unity with C# prgram and move the animator.
 ## Algorithm:
 ### Step 1: Download 2 crouch idle from maximo 3d. Drag it and drop it in unity asset.
 ### Step 2: Select one crouch and in the inspector choose rig-> Animation type (humaniod) and then click update.
@@ -20,7 +20,46 @@
 ### Step 15: In blend tree, in blend type choose (2D Freedom Directional), parameter (InputX, InputY) , one crouch (0,-1,1) and walking (1,0,1). Bring the camera under the player 
 
 ## Program:
+```
+Developed by : Shobika P
+Register no. : 212221230096
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class IdleToCruch : MonoBehaviour
+{
+    public Animator animator;
+    public float InputX;
+    public float InputY;
+    // Start is called before the first frame update
+    void Start()
+    {
+        animator = this.gameObject.GetComponent<Animator>();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        InputX = Input.GetAxis("Horizontal");
+        InputY = Input.GetAxis("Vertical");
+        animator.SetFloat("InputX", InputX);
+        animator.SetFloat("InputY", InputY);
+
+    }
+}
+
+```
 
 ## Output:
+![image](https://github.com/Shobika187/Animator/assets/94508142/f47a66c2-5ffd-4a52-9be0-ce10a5fb8efb)
+### WALKING FORWARD
+![image](https://github.com/Shobika187/Animator/assets/94508142/b7863587-3f30-45fa-aa8f-394b1f16c8fc)
+### WALKING BACKWARD
+![image](https://github.com/Shobika187/Animator/assets/94508142/5daad6bf-9fe5-4f59-912b-53d1daebb47d)
+
 
 ## Result:
+Thus, the animator was successfully developed in unity engine with the C#.
